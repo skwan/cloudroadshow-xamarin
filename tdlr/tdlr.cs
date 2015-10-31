@@ -10,12 +10,13 @@ namespace tdlr
 	{
 		// App Config Values
 		public static AuthenticationContext AuthContext;
-		public static string clientId = "3d8c4803-ffcd-4b2a-baec-05056abdc408";
-		public static string taskApiResourceId = "https://strockisdevtwo.onmicrosoft.com/tdlr";
+		public static string clientId = "348f6e27-0cba-4f75-8bdb-57bdd1755b8d";
+		public static string taskApiResourceId = "https://dev.skwantoso.com/tdlr";
 		public static string graphApiResourceId = "https://graph.windows.net";
 		public static string graphApiVersion = "1.6";
 		public static string commonAuthority = "https://login.microsoftonline.com/common";
-		public static Uri redirectUri = new Uri("http://tdlr");
+		public static Uri redirectUri = new Uri("https://tdlr");
+		public static string taskApiUrl = "https://tdlr3.azurewebsites.net";
 
 		public App ()
 		{

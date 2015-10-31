@@ -10,7 +10,7 @@ namespace tdlr
 {
 	public class TaskHelper
 	{
-		private static string taskApi = "http://todolistreimagined.azurewebsites.net/";
+		private static string taskApi = App.taskApiUrl;
 
 		public static async System.Threading.Tasks.Task<List<Task>> GetUserTasks()
 		{	
@@ -18,7 +18,7 @@ namespace tdlr
 			AuthenticationResult authResult = await App.AuthContext.AcquireTokenSilentAsync(App.taskApiResourceId, App.clientId);
 
 			// Construct the request with an access token
-			string url = TaskHelper.taskApi + "api/tasks";
+			string url = TaskHelper.taskApi + "/api/tasks";
 			var req = WebRequest.CreateHttp (url);
 			req.Headers ["Authorization"] = "Bearer " + authResult.AccessToken;
 
@@ -44,7 +44,7 @@ namespace tdlr
 			AuthenticationResult authResult = await App.AuthContext.AcquireTokenSilentAsync(App.taskApiResourceId, App.clientId);
 
 			// Construct the request with an access token
-			string url = TaskHelper.taskApi + "api/tasks/" + task.TaskID;
+			string url = TaskHelper.taskApi + "/api/tasks/" + task.TaskID;
 			var req = WebRequest.CreateHttp (url);
 			req.Headers ["Authorization"] = "Bearer " + authResult.AccessToken;
 			req.Method = "DELETE";
@@ -64,7 +64,7 @@ namespace tdlr
 			AuthenticationResult authResult = await App.AuthContext.AcquireTokenSilentAsync(App.taskApiResourceId, App.clientId);
 
 			// Construct the request with an access token
-			string url = TaskHelper.taskApi + "api/tasks/" + task.TaskID;
+			string url = TaskHelper.taskApi + "/api/tasks/" + task.TaskID;
 			var req = WebRequest.CreateHttp (url);
 			req.Headers ["Authorization"] = "Bearer " + authResult.AccessToken;
 			req.Method = "PUT";
@@ -92,7 +92,7 @@ namespace tdlr
 			AuthenticationResult authResult = await App.AuthContext.AcquireTokenSilentAsync(App.taskApiResourceId, App.clientId);
 
 			// Construct the request with an access token
-			string url = TaskHelper.taskApi + "api/tasks";
+			string url = TaskHelper.taskApi + "/api/tasks";
 			var req = WebRequest.CreateHttp (url);
 			req.Headers ["Authorization"] = "Bearer " + authResult.AccessToken;
 			req.Method = "POST";
@@ -123,7 +123,7 @@ namespace tdlr
 			AuthenticationResult authResult = await App.AuthContext.AcquireTokenSilentAsync(App.taskApiResourceId, App.clientId);
 
 			// Construct the request with an access token
-			string url = TaskHelper.taskApi + "api/tasks/" + taskID + "/share";
+			string url = TaskHelper.taskApi + "/api/tasks/" + taskID + "/share";
 			var req = WebRequest.CreateHttp (url);
 			req.Headers ["Authorization"] = "Bearer " + authResult.AccessToken;
 			req.Method = "PUT";
@@ -151,7 +151,7 @@ namespace tdlr
 			AuthenticationResult authResult = await App.AuthContext.AcquireTokenSilentAsync(App.taskApiResourceId, App.clientId);
 
 			// Construct the request with an access token
-			string url = TaskHelper.taskApi + "api/tasks/" + taskID + "/share";
+			string url = TaskHelper.taskApi + "/api/tasks/" + taskID + "/share";
 			var req = WebRequest.CreateHttp (url);
 			req.Headers ["Authorization"] = "Bearer " + authResult.AccessToken;
 

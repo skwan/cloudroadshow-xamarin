@@ -67,7 +67,8 @@ namespace tdlr
 					"') or startswith(mailNickname,'" + inputValue +
 					"') or startswith(jobTitle,'" + inputValue +
 					"') or startswith(department,'" + inputValue +
-					"') or startswith(city,'" + inputValue + "')";
+					"') or startswith(city,'" + inputValue +
+					"')";
 			}
 
 			// Send GET request with access token
